@@ -1,0 +1,28 @@
+table {
+    margin: 0 auto;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+#table-header {
+    color: white;
+    background-color: #4286f4;
+}
+
+.table-row {
+    color: white;
+    background-color: #6fa5fc;
+}
+
+ul {
+    text-align: center;
+    padding-left: 10px;
+}
+
+.hobby {
+    color: red;
+    font-weight: bold;
+}
