@@ -1,3 +1,70 @@
+body {
+    background-color: #eeeeee;
+    font-family: "Montserrat";
+}
+
+header, main, nav, footer {
+    text-align: center;
+}
+
+nav a {
+    padding: 15px;
+    font-size: 1.8em;
+    text-decoration: none;
+    color: #aaaaaa;
+}
+
+nav a:hover {
+    color: #6fa5fc;
+    transition: .5s;
+}
+
+nav #current {
+    color: black;
+    transition: .5s;
+}
+
+nav #current:hover {
+    color: #4f92ff;
+}
+
+#me, #welcome {
+  float: left;
+}
+
+#me {
+    margin: 1em;
+    width: 30%;
+    border-radius: 500px;
+    border: 5px solid white;
+    box-shadow: 0 5px 20px -10px rgba(0,0,0,0.75);
+}
+
+#welcome {
+    text-align: left;
+    padding-left: 4em;
+}
+
+footer {
+    clear: left;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+#csumb-logo {
+    margin-top: 1em;
+    border-radius: 50px;
+}
+
+#content {
+    text-align: center;
+}
+
+
+hr {
+    width: 50%;
+}
+
 table {
     margin: 0 auto;
 }
@@ -19,10 +86,12 @@ td {
 
 ul {
     text-align: center;
-    padding-left: 10px;
+    padding-left: 0px;
+    list-style: none;
 }
 
 .hobby {
-    color: red;
+    color: #4286f4;
     font-weight: bold;
+    font-size: 1.25em;
 }

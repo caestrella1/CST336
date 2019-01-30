@@ -2,18 +2,19 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
         <title>Lab 1: Portfolio</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     </head>
     <body>
         <header>
             <h1>Carlos Estrada</h1>
         </header>
         
-        <hr width="50%"/>
+        <hr/>
         
         <nav>
-            <a href="index.html">Home</a>
+            <a id="current" href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
@@ -22,19 +23,19 @@
         
         <main>
             <figure>
-                <img src="img/me.jpg" alt="Picture of Carlos Estrada"/>
+                <img id="me" src="img/me.jpg" alt="Picture of Carlos Estrada"/>
             </figure>
             
-            <div>
-                Hello world!<br/>
+            <div id="welcome">
+                <h1>Hello world!</h1>
                 <p>Thank you for visiting my portfolio website.</p>
                 <p>I am a Software Engineer at CSU Monterey Bay working as the
                 school newspaper's Webmaster.</p>
                 <p>Feel free to contact me!</p>
                 <br/><br/>
                 
-                "'You miss 100 percent of the shots you don't take'
-                – Wayne Gretzky"<br/>
+                <em>"'You miss 100 percent of the shots you don't take'
+                – Wayne Gretzky"</em><br/>
                 – Michael Scott
             </div>
             
@@ -46,6 +47,8 @@
             <strong>Disclaimer:</strong> the information on this webpage is
             fictious. <br/>
             It is used for academic purposes only.
+            <br>
+            <img id="csumb-logo" src="../../img/csumb.png" alt="CSUMB Logo"/>
         </footer>
         
     </body>
