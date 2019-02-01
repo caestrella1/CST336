@@ -7,6 +7,17 @@ header, main, nav, footer {
     text-align: center;
 }
 
+a {
+    color: #6fa5fc;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin: 0em 2em;
+}
+
+
 nav a {
     padding: 15px;
     font-size: 1.8em;
@@ -28,25 +39,19 @@ nav #current:hover {
     color: #4f92ff;
 }
 
-#me, #welcome {
-  float: left;
-}
-
-#me {
-    margin: 1em;
-    width: 30%;
+#me img {
+    width: 300px;
     border-radius: 500px;
     border: 5px solid white;
     box-shadow: 0 5px 20px -10px rgba(0,0,0,0.75);
 }
 
 #welcome {
+    width: 40%;
     text-align: left;
-    padding-left: 4em;
 }
 
 footer {
-    clear: left;
     font-size: 14px;
     color: #aaaaaa;
 }
