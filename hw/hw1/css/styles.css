@@ -1,0 +1,108 @@
+body {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+}
+
+header {
+    color: white;
+    width: 100%;
+    padding-top: 1px;
+    background-color: #1976d2;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+.align-left {
+    text-align: left;
+}
+
+#home {
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+.header-image {
+    width: 100%;
+    height: 250px;
+    background-image: url("../img/binary-header.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#header-overview {
+    background-image: url("../img/binary-header.jpg");
+}
+
+#header-what {
+    background-image: url("../img/circuit-header.jpg");
+}
+
+nav {
+    padding-bottom: 12px;
+}
+
+nav a {
+    color: #eceff1;
+    margin-top: 10px;
+    padding: 12px;
+    text-decoration: none;
+    transition: .25s;
+}
+
+nav a:hover {
+    color: white;
+    padding: 12px;
+    padding-bottom: 9px;
+    border-bottom: 3px solid white;
+}
+
+#current {
+    color: #1976d2;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+main {
+    text-align: center;
+    margin: 3% 20% 3% 20%;
+}
+
+table {
+    width: 75%;
+    margin: 0 auto;
+}
+
+tr {
+    text-align: left;
+    color: white;
+    font-weight: bold;
+    background-color: #004ba0;
+}
+
+td, th {
+    padding: 20px;
+}
+
+td {
+    font-weight: normal;
+    background-color: #63a3ff;
+}
+
+button {
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+    background-color: #1976d2;
+    transition: .5s;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #004a9f;
+}
