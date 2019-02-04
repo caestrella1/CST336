@@ -1,0 +1,46 @@
+main, header {
+    text-align: center;
+}
+
+body{
+    color: yellow;
+    background-color: black;
+    font-family: 'Roboto Slab', serif;
+}
+
+img {
+    transition: .5s;
+}
+
+img:hover{
+    transform: scale(1.1);
+}
+
+.row {
+  display: inline-block;
+}
+
+.col-2 {
+    display: block;
+    width: 100%;
+}
+
+#center {
+    text-align: center;
+}
+
+#fall-img {
+    border-bottom-left-radius: 50px;
+}
+
+#summer-img{
+    border-top-right-radius: 50px;
+}
+
+#spring-img{
+    border-top-left-radius: 50px;
+}
+
+#winter-img{
+    border-bottom-right-radius: 50px;
+}
