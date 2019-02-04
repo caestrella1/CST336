@@ -17,16 +17,13 @@ img:hover{
 }
 
 .row {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 
 .col-2 {
-    display: block;
-    width: 100%;
-}
-
-#center {
-    text-align: center;
+    display:flex;
+    flex-direction: column;
 }
 
 #fall-img {
