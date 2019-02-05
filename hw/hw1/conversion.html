@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>The Binary System – Conversion</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    </head>
+    
+    <body>
+    
+        <header>
+            <a id="home" href="index.html"><h1>The Binary System</h1></a>
+            
+            <nav>
+                <a href="index.html">Overview</a>
+                <a href="intro.html">Introduction</a>
+                <a id="current" href="#">Conversion</a>
+                <a href="arithmetic.html">Arithmetic</a>
+            </nav>
+            
+            <div id="header-convert" class="header-image"></div>
+            
+        </header>
+        
+        <main>
+            <h1>Conversion</h1>
+            <p>Now that we know what the binary system is, how do we convert a 
+            binary number back to a decimal number? Let's look at the binary 
+            number <code>1101</code>.</p>
+            
+            <p>Going from the <strong>Least Significant Bit</strong> (on the
+            right-most end) to the <strong>Most Significant Bit</strong> (on the
+            left-most end), we look at each position and get its <strong>weight</strong>,
+            which here means the base value (2) multiplied by the significance
+            of the digit's position. To better express this, let's look at the
+            binary number <code>1101</code> mentioned earlier.</p>
+            
+            <p>The right-most digit, 1, has a weight of 0. Calculating the value
+            of 2<sup>0</sup> gives us 1. The digit to its left is a 0 and has a 
+            weight of 1. Zeroes, in this case are not used to compute the decimal 
+            number and are ignored. We repeat the process as such:</p>
+            
+            <code id="conversion">
+                2<sup>0</sup> + 2<sup>2</sup> + 2<sup>3</sup> = 13
+            </code>
+        </main>
+        
+        <footer>
+            <a href="intro.html"><button>Previous: Introduction</button></a>
+            <a href="arithmetic.html"><button>Next: Arithmetic</button></a>
+        </footer>
+    
+    </body>
+</html>

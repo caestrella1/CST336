@@ -1,22 +1,48 @@
 body {
-    text-align: center;
     font-family: "Montserrat", sans-serif;
-    margin: 0;
+    margin: 0 auto;
+}
+
+code {
+    font-size: 1.25em;
+    color: #1976d2;
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     color: white;
     width: 100%;
-    padding-top: 1px;
     background-color: #1976d2;
 }
 
-p {
-    line-height: 1.5em;
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.align-left {
-    text-align: left;
+nav a {
+    color: #eceff1;
+    margin-top: 10px;
+    padding: .9em;
+    text-decoration: none;
+    transition: .25s;
+}
+
+nav a:hover {
+    color: white;
+    padding: .9em;
+    padding-bottom: 10px;
+    border-bottom: 4px solid white;
+}
+
+#current {
+    color: #1976d2;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px 5px 0 0;
 }
 
 #home {
@@ -28,7 +54,6 @@ p {
 .header-image {
     width: 100%;
     height: 250px;
-    background-image: url("../img/binary-header.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -37,39 +62,22 @@ p {
     background-image: url("../img/binary-header.jpg");
 }
 
-#header-what {
+#header-intro {
     background-image: url("../img/circuit-header.jpg");
 }
 
-nav {
-    padding-bottom: 12px;
+#header-convert {
+    background-image: url("../img/numbers-header.jpg");
 }
 
-nav a {
-    color: #eceff1;
-    margin-top: 10px;
-    padding: 12px;
-    text-decoration: none;
-    transition: .25s;
-}
-
-nav a:hover {
-    color: white;
-    padding: 12px;
-    padding-bottom: 9px;
-    border-bottom: 3px solid white;
-}
-
-#current {
-    color: #1976d2;
-    font-weight: bold;
-    background-color: white;
-    border-radius: 5px 5px 0 0;
+#header-arithmetic {
+    background-image: url("../img/math-header.jpg");
 }
 
 main {
-    text-align: center;
-    margin: 3% 20% 3% 20%;
+    display: flex;
+    flex-direction: column;
+    margin: 3% 20%;
 }
 
 table {
@@ -93,10 +101,22 @@ td {
     background-color: #63a3ff;
 }
 
+footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+footer a {
+    align-self: center;
+}
+
 button {
-    padding: 20px;
+    margin: 0 auto;
+    padding: 1.25em 1.5em;
     color: white;
-    font-size: 16px;
+    font-size: 1em;
     background-color: #1976d2;
     transition: .5s;
     border-radius: 5px;
@@ -105,4 +125,30 @@ button {
 button:hover {
     cursor: pointer;
     background-color: #004a9f;
+}
+
+#done {
+    color: #1976d2;
+    text-align: center;
+}
+
+#conversion {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.row img {
+    align-self: center;
 }

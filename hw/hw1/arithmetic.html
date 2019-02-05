@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>The Binary System – Arithmetic</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    </head>
+    
+    <body>
+    
+        <header>
+            <a id="home" href="index.html"><h1>The Binary System</h1></a>
+            
+            <nav>
+                <a href="index.html">Overview</a>
+                <a href="intro.html">Introduction</a>
+                <a href="conversion.html">Conversion</a>
+                <a id="current" href="#">Arithmetic</a>
+            </nav>
+            
+            <div id="header-arithmetic" class="header-image"></div>
+            
+        </header>
+        
+        <main>
+            <h1>Arithmetic</h1>
+            <p>Just like decimal numbers, binary numbers can also be added and
+            subtracted. For simplicity, we will only cover how to add them.</p>
+            
+            <section class="row">
+                <div class="col">
+                    <p>To the right, we are going to be adding the binary numbers 
+                    <code>10110</code> (22) and <code>1101</code> (13). Just like
+                    base-10 addition, we will start from the right side of
+                    the number and find the sum at each position.</p>
+                    
+                    <p>To our right, we start by finding the sum of 0 and 1, which 
+                    is simply 1. Moving one place to the left, we have 1 and 0, which
+                    is also 1.</p>
+                    
+                    <p>Next, we have 1 and 1, which is 2 (or 10 in binary). Because 
+                    binary is represented only with 0's and 1's, we cannot simply 
+                    write a 2 here, the same way we don't write a 10 when adding 
+                    decimals. Instead, we carry a 1 over to the next column and
+                    continue, where we get the same scenario again, and again in the 
+                    next.</p>
+                    
+                    <p>Our final answer is now <code>100011</code> (35).</p>
+                </div>
+                
+                <img src="img/binary-addition.jpg" alt="Binary addition"/>
+            </section>
+        </main>
+        
+        <footer>
+            <h2 id="done">All Done!</h2>
+        </footer>
+    
+    </body>
+</html>
