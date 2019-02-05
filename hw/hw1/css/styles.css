@@ -112,7 +112,11 @@ footer a {
     align-self: center;
 }
 
-button {
+.button {
+    text-decoration: none;
+}
+
+span {
     margin: 0 auto;
     padding: 1.25em 1.5em;
     color: white;
@@ -122,8 +126,7 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
-    cursor: pointer;
+span:hover {
     background-color: #004a9f;
 }
 
