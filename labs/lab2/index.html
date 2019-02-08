@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Guess a Number </title>
+        <meta charset="utf-8" />
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        
+        <!--Bootstrap files-->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        
+        <!--Custom Files-->
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="js/functions.js"></script>
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Guess a Number</h1>
+            <div id="win-stats" class="text-success font-weight-bold">
+                <span>Wins: </span>
+                <span id="win-count">0</span>
+            </div>
+            <div id="lose-stats" class="text-danger font-weight-bold">
+                <span>Losses: </span>
+                <span id="lose-count">0</span>
+            </div>
+        </div>
+        
+        <div id="directions">
+            <h3>Guess a number between 1 and 99 in seven attempts!</h3>
+            
+            <div id="input-elements">
+                <input id="user-in" class="form-control form-control-lg" type="number" placeholder="Enter a number">
+                <button id="submit-guess" class="btn btn-primary btn-lg">Submit Guess</button>
+            </div>
+            
+            <h4>Previous Guesses</h4>
+            <p id="previous-guesses"></p>
+            <div id="result-banner" class="bg-danger text-light"></div>
+            <p id="hint-text"></p>
+        </div>
+        
+    </body>
+</html>

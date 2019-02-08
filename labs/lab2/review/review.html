@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Review</title>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script>
+            function doMagic() {
+                document.getElementById("cat-img").src = "img/now_you_dont.png";
+                document.getElementById("caption").innerHTML = "...now you don't.";
+                document.getElementById("caption").style.color = "red";
+                document.getElementById("magic").style.display = "none";
+                document.getElementById("undo-magic").style.display = "inline";
+            }
+            
+            function reappear() {
+                document.getElementById("cat-img").src = "img/now_you_see_me.png";
+                document.getElementById("caption").innerHTML = "Now you see me...";
+                document.getElementById("caption").style.color = "black";
+                document.getElementById("magic").style.display = "inline";
+                document.getElementById("undo-magic").style.display = "none";
+            }
+        </script>
+        
+        <style type="text/css">
+            #undo-magic {
+                display: none;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <img id="cat-img" src="img/now_you_see_me.png"/><br>
+        <span id="caption">Now you see me...</span><br>
+        <button id="magic" onclick="doMagic()">Do Magic!</button>
+        <button id="undo-magic" onclick="reappear()">Bring him back!</button>
+    </body>
+</html>
