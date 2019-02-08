@@ -1,0 +1,40 @@
+#container {
+    display: flex;
+    font-family: sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    
+    color: white;
+    background-image: url("../img/ny.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p, a {
+    font-size: 1.25em;
+}
+
+#github {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 1em;
+    padding: 1em 2em;
+    border-radius: 8px;
+    border: 2px solid white;
+    transition: .5s;
+}
+
+#github:hover {
+    color: black;
+    background-color: white;
+}
