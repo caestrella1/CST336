@@ -1,3 +1,15 @@
 # CST336: Internet Programming
 
-This repo contains homework, labs and practice projects created for the Spring 2019 semester of CST 336: Internet Programming at CSU Monterey Bay.
+This repo contains homework, labs and practice projects created for the Spring 2019 semester of CST 336: Internet Programming at CSU Monterey Bay. Click a link below to view each assignment.
+
+## Table of Contents
+
+### Homework
+1. **HTML & CSS:** [Binary Lesson](http://caestrada-cst336.herokuapp.com/hw/hw1/)
+
+### Labs
+1. **Intro to HTML & CSS:** [Portfolio](http://caestrada-cst336.herokuapp.com/labs/lab1/)
+2. **JavaScript & JQuery:** [Guess a Number](http://caestrada-cst336.herokuapp.com/labs/lab2/)
+
+### Practice
+1. **HTML & CSS**: [The Seasons](http://caestrada-cst336.herokuapp.com/practice/p1/)
