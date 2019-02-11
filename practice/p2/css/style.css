@@ -1,3 +1,13 @@
+h1, h2, h3, h4 {
+    font-family: "Open Sans";
+    font-weight: bold;
+}
+
+p, a {
+    font-size: 18px;
+    font-family: "Hind";
+}
+
 #header {
     color: white;
     padding: 2em 1em;
@@ -7,6 +17,5 @@
 a {
     color: #4c6b83;
     font-size: 1.25em;
-    font-family: "Hind";
     text-decoration: underline;
 }
