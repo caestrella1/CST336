@@ -1,0 +1,12 @@
+#header {
+    color: white;
+    padding: 2em 1em;
+    background-color: #0B2A4B;
+}
+
+a {
+    color: #4c6b83;
+    font-size: 1.25em;
+    font-family: "Hind";
+    text-decoration: underline;
+}
