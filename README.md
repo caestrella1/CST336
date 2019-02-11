@@ -13,3 +13,4 @@ This repo contains homework, labs and practice projects created for the Spring 2
 
 ### Practice
 1. **HTML & CSS**: [The Seasons](http://caestrada-cst336.herokuapp.com/practice/p1/)
+2. **HTML & CSS**: [CSUMB SCD Page](http://caestrada-cst336.herokuapp.com/practice/p2/)
