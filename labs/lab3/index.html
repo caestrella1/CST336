@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Geography Quiz</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </head>
+    <body>
+        <h1>US Geography Quiz</h1>
+
+        <h2>What is the capital of California?</h2>
+        <input id="q1" type="text"/>
+        <p id="q1-feedback"></p>
+        
+        <h2>What is the longest US river?</h2>
+        <select id="q2">
+            <option>Select one:</option>
+            <option>Mississippi River</option>
+            <option>Colorado River</option>
+            <option>Hudson River</option>
+            <option>Missouri River</option>
+        </select>
+        <p id="q2-feedback"></p>
+        
+        <h2>What is the smallest US state?</h2>
+        <input id="maine" type="radio" name="states" value="Maine">
+            <label for="maine">Maine</label>
+        
+        <input id="ri" type="radio" name="states" value="Rhode Island"/>
+            <label for="ri">Rhode Island</label>
+        
+        <input id="ml" type="radio" name="states" value="Maryland"/>
+            <label for="ml">Maryland</label>
+        
+        <input id="dw" type="radio" name="states" value="Delaware"/>
+            <label for="dw">Delaware</label>
+        <p id="q3-feedback"></p>
+            
+        <br><br>
+        <h2 id="total-score"></h2>
+        <button id="submitbtn">Submit</button>
+
+    </body>
+    
+    <script>
+        /* global $ */
+        var q1points = 25, q2points = 25, q3points = 25;
+        var q1ans = "Sacramento";
+        var q2ans = "Missouri River";
+        var q3ans = "Rhode Island";
+        
+        $("#submitbtn").on("click", function() {
+            let score = 0;
+            let q1response = $("#q1").val();
+            let q2response = $("#q2").val();
+            let q3response = $("input[name='states']:checked").val();
+           
+            if (q1response.toLowerCase() == q1ans.toLowerCase()) {
+                score += q1points;
+                $("#q1-feedback").html("Correct!");
+            }
+            else {
+                $("#q1-feedback").html("Wrong!");
+            }
+            
+            if (q2response.toLowerCase() == q2ans.toLowerCase()) {
+                score += q2points;
+                $("#q2-feedback").html("Correct!");
+            }
+            else {
+                $("#q2-feedback").html("Wrong!");
+            }
+            
+            if (q3response == q3ans) {
+                score += q3points;
+                $("#q3-feedback").html("Correct!");
+            }
+            else {
+                $("#q3-feedback").html("Wrong!");
+            }
+           
+          $("#total-score").html("Your total score is: " + score);
+        });
+    </script>
+</html>
