@@ -1,5 +1,66 @@
 body {
-    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     text-align: center;
-    background-color: #C4E4FF;
+    background-color: #f6f6f6;
+}
+
+h1 {
+    font-weight: 800;
+}
+
+h2, h3, h4 {
+    font-weight: 600;
+}
+
+input[type='text'], select {
+    font-size: 1em;
+    padding: .75em;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+button {
+    color: #007AFF;
+    font-size: 1em;
+    padding: .75em 3em;
+    border: 1px solid #007AFF;
+    border-radius: 8px;
+    transition: .5s;
+}
+
+button:hover {
+    color: white;
+    background-color: #007AFF;
+    cursor: pointer;
+}
+
+select {
+    font-size: 1em;
+    color: #666666;
+    width: 15em;
+    height: 2.5em;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+.container {
+    padding: 2em 8em;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.03);
+}
+
+.feedback {
+    display: none;
+    font-weight: bold;
+    color: #4BD964;
+    padding: 1em;
 }
