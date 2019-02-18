@@ -4,43 +4,96 @@
         <meta charset="utf-8"/>
         <title>Geography Quiz</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css" type="text/css" />
     </head>
     <body>
-        <h1>US Geography Quiz</h1>
-        
         <div class="container">
-            <h2>What is the capital of California?</h2>
-            <input id="q1" type="text" placeholder="Enter a city name"/>
-            <span id="q1-feedback" class="feedback"></span>
+            <h1>US Geography Quiz</h1>
         
         
-            <h2>What is the longest US river?</h2>
-            <select id="q2">
-                <option selected="true" disabled="disabled">Select one:</option>
-                <option>Mississippi River</option>
-                <option>Colorado River</option>
-                <option>Hudson River</option>
-                <option>Missouri River</option>
-            </select>
-            <span id="q2-feedback" class="feedback"></span>
+        </div>
+        
+        <div class="m-card">
+            <div id="questions" class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>1. What is the capital of California?</h2>
+                        <input id="q1" type="text" placeholder="Enter a city name"/>
+                        <span id="q1-feedback" class="feedback"></span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <h2>2. What is the longest US river?</h2>
+                        <select id="q2">
+                            <option selected="true" disabled="disabled">Select one:</option>
+                            <option>Mississippi River</option>
+                            <option>Colorado River</option>
+                            <option>Hudson River</option>
+                            <option>Missouri River</option>
+                        </select>
+                        <span id="q2-feedback" class="feedback"></span>
+                    </div>
+                </div>
+                    
+                <div class="row">
+                    <div class="col-12">
+                        <h2>3. What is the smallest US state?</h2>
+                            <input id="maine" type="radio" name="states" value="Maine">
+                            <label for="maine">Maine</label>
+                        
+                            <input id="ri" type="radio" name="states" value="Rhode Island"/>
+                            <label for="ri">Rhode Island</label>
+                        
+                            <input id="ml" type="radio" name="states" value="Maryland"/>
+                            <label for="ml">Maryland</label>
+                        
+                            <input id="dw" type="radio" name="states" value="Delaware"/>
+                            <label for="dw">Delaware</label>
+                        <span id="q3-feedback" class="feedback"></span>
+                    </div>
+                </div>
+                    
+                <div class="row">
+                    <div class="col-12">
+                        <h2>4. What presidents are carved into Mount Rushmore?</h2>
+                            <input id="ajackson" type="checkbox" name="rushmore" value="A. Jackson"/>
+                            <label for="ajackson">A. Jackson</label>
+                            
+                            <input id="bfranklin" type="checkbox" name="rushmore" value="B. Franklin"/>
+                            <label for="bfranklin">B. Franklin</label>
+                            
+                            <input id="tjefferson" type="checkbox" name="rushmore" value="T. Jefferson"/>
+                            <label for="tjefferson">T. Jefferson</label>
+                            
+                            <input id="troosevelt" type="checkbox" name="rushmore" value="T. Roosevelt"/>
+                            <label for="troosevelt">T. Roosevelt</label>
+                        <span id="q4-feedback" class="feedback"></span>
+                    </div>
+                </div>
+                    
+                <div class="row">
+                    <div class="col-12">
+                        <h2>5. What image is in the Great Seal of California?</h2>
+                        <img id="seal1" class="img-choice" src="img/seal1.png"/>
+                        <img id="seal2" class="img-choice" src="img/seal2.png"/>
+                        <img id="seal3" class="img-choice" src="img/seal3.png"/>
+                        <span id="q5-feedback" class="feedback"></span>
+                    </div>
+                </div>
             
-            <h2>What is the smallest US state?</h2>
-            <input id="maine" type="radio" name="states" value="Maine">
-                <label for="maine">Maine</label>
-            
-            <input id="ri" type="radio" name="states" value="Rhode Island"/>
-                <label for="ri">Rhode Island</label>
-            
-            <input id="ml" type="radio" name="states" value="Maryland"/>
-                <label for="ml">Maryland</label>
-            
-            <input id="dw" type="radio" name="states" value="Delaware"/>
-                <label for="dw">Delaware</label>
-            <span id="q3-feedback" class="feedback"></span>
+            </div>
                 
             <h2 id="total-score"></h2>
-            <button id="submitbtn">Submit</button>
+            <button id="submitbtn" class="btn btn-outline-primary btn-lg">Submit</button>
+        </div>
+        
+        <div id="stats" class="container">
+            <p id="quiz-count">You have not taken this quiz yet.</p>
+            <p id="score-history">Your score history will appear here.</p>
         </div>
 
     </body>

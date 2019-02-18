@@ -1,7 +1,6 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     text-align: center;
@@ -9,6 +8,7 @@ body {
 }
 
 h1 {
+    margin: .5em 0;
     font-weight: 800;
 }
 
@@ -25,21 +25,6 @@ input[type='text'], select {
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
 }
 
-button {
-    color: #007AFF;
-    font-size: 1em;
-    padding: .75em 3em;
-    border: 1px solid #007AFF;
-    border-radius: 8px;
-    transition: .5s;
-}
-
-button:hover {
-    color: white;
-    background-color: #007AFF;
-    cursor: pointer;
-}
-
 select {
     font-size: 1em;
     color: #666666;
@@ -51,16 +36,40 @@ select {
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
 }
 
-.container {
-    padding: 2em 8em;
+.m-card {
+    padding: 2em 5em;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.03);
+}
+
+.col-12 {
+    margin-top: 3em;
+}
+
+.img-choice {
+    margin: 1em;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.selected {
+    background-color: #007AFF;
+}
+
+.m-disabled {
+    opacity: 0.6;
+    pointer-events: none;
 }
 
 .feedback {
     display: none;
     font-weight: bold;
     color: #4BD964;
-    padding: 1em;
+    padding-top: 1em;
+}
+
+#stats {
+    color: gray;
+    margin: 1em 0;
 }
