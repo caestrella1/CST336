@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slot Machine</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="title" class="text-center">Slot Machine</h1>
+            <div id="machine" class="jumbotron">
+                <img id="slot1" class="slot" src="img/cherry.png"/>
+                <img id="slot2" class="slot" src="img/grapes.png"/>
+                <img id="slot3" class="slot" src="img/seven.png"/>
+            </div>
+            
+            <div id="stats-container">
+                <button id="play-btn" class="btn btn-lg btn-success">Play</button>
+                <h2 id="jackpot"></h2>
+                <h3 id="win-title">You won $<span id="win">0</span></h3>
+                <h4 class="text-success">Total Winnings: $<span id="winnings">0</span></h4>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="js/functions.js"></script>
+</html>
