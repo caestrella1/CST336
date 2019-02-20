@@ -8,7 +8,6 @@ var q5ans = "seal2";
 /* LocalStorage can only store strings/ints, need to parse/format array */
 var scores = JSON.parse(localStorage.getItem("previousScores"));
 if (!scores) scores = [];
-var reset = false; // resuse submit button for resetting questions
 
 $("#quiz-count").html(displayCount());
 $("#score-history").html(displayScores());
@@ -23,11 +22,6 @@ $(".img-choice").on("click", function() {
 });
 
 $("#submitbtn").on("click", function() {
-    if (reset) {
-        tryAgain();
-        return;
-    }
-    
     if (!isFormValid()) {
         alert("Please answer all the questions.");
         return;
@@ -47,10 +41,12 @@ $("#submitbtn").on("click", function() {
         score += points;
         $("#q1-feedback").css("color", correct);
         $("#q1-feedback").html("Correct!");
+        $("#q1-mark").html("<img src='img/checkmark.png' alt='checkmark'/>");
     }
     else {
         $("#q1-feedback").css("color", incorrect);
         $("#q1-feedback").html("Wrong!");
+        $("#q1-mark").html("<img src='img/xmark.png' alt='xmark'/>");
     }
     
     // Check if response value is NULL (ie user didn't respond to question)
@@ -58,20 +54,24 @@ $("#submitbtn").on("click", function() {
         score += points;
         $("#q2-feedback").css("color", correct);
         $("#q2-feedback").html("Correct!");
+        $("#q2-mark").html("<img src='img/checkmark.png' alt='checkmark'/>");
     }
     else {
         $("#q2-feedback").css("color", incorrect);
         $("#q2-feedback").html("Wrong!");
+        $("#q2-mark").html("<img src='img/xmark.png' alt='xmark'/>");
     }
     
     if (q3response == q3ans) {
         score += points;
         $("#q3-feedback").css("color", correct);
         $("#q3-feedback").html("Correct!");
+        $("#q3-mark").html("<img src='img/checkmark.png' alt='checkmark'/>");
     }
     else {
         $("#q3-feedback").css("color", incorrect);
         $("#q3-feedback").html("Wrong!");
+        $("#q3-mark").html("<img src='img/xmark.png' alt='xmark'/>");
     }
     
     if ($("#troosevelt").is(":checked") && $("#tjefferson").is(":checked")
@@ -79,35 +79,43 @@ $("#submitbtn").on("click", function() {
         score += points;
         $("#q4-feedback").css("color", correct);
         $("#q4-feedback").html("Correct!");
+        $("#q4-mark").html("<img src='img/checkmark.png' alt='checkmark'/>");
     }
     else {
         $("#q4-feedback").css("color", incorrect);
         $("#q4-feedback").html("Wrong!");
+        $("#q4-mark").html("<img src='img/xmark.png' alt='xmark'/>");
     }
     
     if (q5response == q5ans) {
         score += points;
         $("#q5-feedback").css("color", correct);
         $("#q5-feedback").html("Correct!");
+        $("#q5-mark").html("<img src='img/checkmark.png' alt='checkmark'/>");
     }
     else {
         $("#q5-feedback").css("color", incorrect);
         $("#q5-feedback").html("Wrong!");
+        $("#q5-mark").html("<img src='img/xmark.png' alt='xmark'/>");
     }
-    
-    $("#questions").addClass("m-disabled");
-    
+
     scores.push(score);
     localStorage.setItem("previousScores", JSON.stringify(scores));
     
-    $("#total-score").html("Your total score is: " + score);
+    if (score == 100)
+        $("#total-score").html("Congratulations!<br> Your total score is " + score);
+    else
+        $("#total-score").html("Your total score is: " + score);
+        
     $("#quiz-count").html(displayCount());
     $("#score-history").html(displayScores());
-    
-    $("#submitbtn").html("Try Again");
-    $("#submitbtn").toggleClass("btn-outline-primary btn-success");
-    reset = true;
-    
+});
+
+$("#clear-history").on("click", function() {
+   scores = [];
+   localStorage.setItem("previousScores", JSON.stringify(scores));
+   $("#quiz-count").html(displayCount());
+   $("#score-history").html(displayScores());
 });
 
 function isFormValid() {
@@ -138,36 +146,20 @@ function isFormValid() {
 function displayCount() {
     let s = JSON.parse(localStorage.getItem("previousScores"));
     
-    if (!s) return "You have not taken this quiz yet.";
+    if (!s || s.length == 0) return "You have not taken this quiz yet.";
     return "You have taken this quiz " + s.length + " times.";
 }
 
 /* Displays all the user's previous scores */
 function displayScores() {
     let s = JSON.parse(localStorage.getItem("previousScores"));
-    if (!s) return "Your previous scores will appear here.";
+    if (!s || s.length == 0) return "Your score history will appear here.";
     
-    let str = "<h5>Previous scores</h5>";
-    for (let i = 0; i < s.length; i++) {
-        str += (s[i]);
+    let str = "<h5>Score History</h5>";
+    s.forEach(function(score, i) {
+        str += (score);
         if (i <s.length - 1)
             str += (", ");
-    }
+    });
     return str;
-}
-
-function tryAgain() {
-    /* Clear all user input */
-    $("#q1").val("");
-    $("#q2").val("Select one:");
-    $("input[name='states']").prop("checked", false);
-    $("input[name='states']").val("");
-    $("input[name='rushmore']:checkbox").prop("checked", false);
-    $(".img-choice").removeClass("selected");
-    
-    $("#questions").removeClass("m-disabled");
-    $(".feedback").hide();
-    $("#submitbtn").html("Submit");
-    $("#submitbtn").toggleClass("btn-outline-primary btn-success");
-    reset = false;
 }

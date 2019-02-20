@@ -19,7 +19,8 @@
             <div id="questions" class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>1. What is the capital of California?</h2>
+                        <h2><span id="q1-mark"></span>
+                        1. What is the capital of California?</h2>
                         <input id="q1" type="text" placeholder="Enter a city name"/>
                         <span id="q1-feedback" class="feedback"></span>
                     </div>
@@ -27,7 +28,8 @@
                 
                 <div class="row">
                     <div class="col-12">
-                        <h2>2. What is the longest US river?</h2>
+                        <h2><span id="q2-mark"></span>
+                        2. What is the longest US river?</h2>
                         <select id="q2">
                             <option selected="true" disabled="disabled">Select one:</option>
                             <option>Mississippi River</option>
@@ -41,7 +43,8 @@
                     
                 <div class="row">
                     <div class="col-12">
-                        <h2>3. What is the smallest US state?</h2>
+                        <h2><span id="q3-mark"></span>
+                        3. What is the smallest US state?</h2>
                             <input id="maine" type="radio" name="states" value="Maine">
                             <label for="maine">Maine</label>
                         
@@ -59,7 +62,8 @@
                     
                 <div class="row">
                     <div class="col-12">
-                        <h2>4. What presidents are carved into Mount Rushmore?</h2>
+                        <h2><span id="q4-mark"></span>
+                        4. What presidents are carved into Mount Rushmore?</h2>
                             <input id="ajackson" type="checkbox" name="rushmore" value="A. Jackson"/>
                             <label for="ajackson">A. Jackson</label>
                             
@@ -77,23 +81,25 @@
                     
                 <div class="row">
                     <div class="col-12">
-                        <h2>5. What image is in the Great Seal of California?</h2>
-                        <img id="seal1" class="img-choice" src="img/seal1.png"/>
-                        <img id="seal2" class="img-choice" src="img/seal2.png"/>
-                        <img id="seal3" class="img-choice" src="img/seal3.png"/>
+                        <h2><span id="q5-mark"></span>
+                        5. What image is in the Great Seal of California?</h2>
+                        <img id="seal1" alt="Seal 1" class="img-choice" src="img/seal1.png"/>
+                        <img id="seal2" alt="Seal 2" class="img-choice" src="img/seal2.png"/>
+                        <img id="seal3" alt="Seal 3" class="img-choice" src="img/seal3.png"/>
                         <span id="q5-feedback" class="feedback"></span>
                     </div>
                 </div>
             
             </div>
                 
-            <h2 id="total-score"></h2>
+            <h3 id="total-score"></h3>
             <button id="submitbtn" class="btn btn-outline-primary btn-lg">Submit</button>
         </div>
         
         <div id="stats" class="container">
             <p id="quiz-count">You have not taken this quiz yet.</p>
             <p id="score-history">Your score history will appear here.</p>
+            <span id="clear-history" class="text-danger">Clear History</span>
         </div>
 
     </body>

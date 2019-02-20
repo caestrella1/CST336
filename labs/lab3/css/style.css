@@ -57,11 +57,6 @@ select {
     background-color: #007AFF;
 }
 
-.m-disabled {
-    opacity: 0.6;
-    pointer-events: none;
-}
-
 .feedback {
     display: none;
     font-weight: bold;
@@ -72,4 +67,13 @@ select {
 #stats {
     color: gray;
     margin: 1em 0;
+}
+
+span[id$='-mark'] img {
+    height: 1em;
+    margin-right: 5px;
+}
+
+#clear-history {
+    cursor: pointer;
 }
