@@ -1,0 +1,10 @@
+.card {
+    margin: 5em auto;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.m-field {
+    margin: 1em 0;
+}
