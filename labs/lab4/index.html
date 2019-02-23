@@ -6,6 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/functions.js"></script>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css" type="text/css" />
     </head>
     <body>
@@ -15,6 +16,7 @@
                 <div class="row">
                     
                     <section class="col-12 col-lg-4">
+                        <h5 class="text-primary">Personal Info</h5>
                         <div class="d-flex flex-column m-field">
                             First Name<input type="text">
                         </div>
@@ -33,10 +35,10 @@
                     </section>
                     
                     <section class="col-12 col-lg-4">
-                    
+                        <h5 class="text-primary">Location</h5>
                         <div class="d-flex flex-column m-field">
                             Zip Code<input id="zip" type="number">
-                            <p><span id="zip-error">Zip code not found</span></p>
+                            <p><span id="zip-error" class="text-danger">Zip code not found</span></p>
                             <p>City: <span id="city" class="text-success font-weight-bold"></span></p>
                             <p>Latitude: <span id="lat" class="text-success font-weight-bold"></span></p>
                             <p>Longitude: <span id="long" class="text-success font-weight-bold"></span></p>
@@ -60,7 +62,7 @@
                     </section>
                     
                     <section class="col-12 col-lg-4">
-                    
+                        <h5 class="text-primary">Account</h5>
                         <div class="d-flex flex-column m-field">
                             Username<input id="username" type="text">
                             <span id="username-feedback"></span>
@@ -68,14 +70,16 @@
                         
                         <div class="d-flex flex-column m-field">
                             Password<input id="pass" type="password">
+                            <span id="pass-feedback" class="text-danger"></span>
                         </div>
                         
                         <div class="d-flex flex-column m-field">
                             Confirm Password<input id="pass-confirm" type="password">
+                            <span id="pass-confirm-feedback" class="text-danger"></span>
                         </div>
                         
                         <div class="text-right">
-                            <input class="btn btn-primary btn-lg" type="submit" value="Sign up!">
+                            <input id="submit-btn" class="btn btn-primary btn-lg" type="submit" value="Sign up!">
                         </div>
                     
                     </section>
