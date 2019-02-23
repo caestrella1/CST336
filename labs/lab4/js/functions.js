@@ -2,7 +2,6 @@
 
 var validZip, validUser, validPass, validConfirm;
 
-// shorthand for $(document).ready
 $(function() {
     $("#zip-error").hide();
     $("#password-feedback").hide();
@@ -22,10 +21,10 @@ $(function() {
         });
     });
     
-    $("#zip").on("change", validateZip());
-    $("#username").on("change", validateUser());
-    $("#pass").on("change", validatePassword());
-    $("#pass-confirm").on("change", confirmPassword());
+    $("#zip").on("change", validateZip);
+    $("#username").on("change", validateUser);
+    $("#pass").on("change", validatePassword);
+    $("#pass-confirm").on("change", confirmPassword);
     
     $("#submit-btn").on("click", function() {
         // run all the validators (can't return in functions due to AJAX being asynchronous)
