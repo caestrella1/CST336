@@ -6,6 +6,7 @@ This repo contains homework, labs and practice projects created for the Spring 2
 
 ### Homework
 1. **HTML & CSS:** [Binary Lesson](http://caestrada-cst336.herokuapp.com/hw/hw1/)
+2. **Form Elements & AJAX:** [Crypto Tracker](http://caestrada-cst336.herokuapp.com/hw/hw2/)
 
 ### Labs
 1. **Intro to HTML & CSS:** [Portfolio](http://caestrada-cst336.herokuapp.com/labs/lab1/)

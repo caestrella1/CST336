@@ -1,0 +1,66 @@
+body {
+    height: 100vh;
+}
+
+header {
+    background-size: cover;
+    background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4selZ8kceikbmag5q/videoblocks-broker-trading-bitcoin-cryptocurrency-on-exchange-with-price-evolution-candle-chart_btopx-som_thumbnail-full01.png);
+}
+
+.jumbotron {
+    margin-top: 2em;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.text-detail {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#price {
+    margin-top: 1em;
+}
+
+select, input[type='number'] {
+    height: 2.5em;
+    padding: 0 10px;
+    margin-bottom: 1em;
+    outline: none;
+    border-radius: 5px;
+}
+
+#price-check select, #price-check input[type='number'] {
+    border: 1px solid #28A745;
+}
+
+#convert select, #convert input[type='number'] {
+    border: 1px solid #017BFF;
+}
+
+#convert input[type='number']::placeholder {
+    color: #017BFF;
+    opacity: 0.6;
+}
+
+tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+td, th {
+    padding: 1em 0;
+}
+
+#top-10, #price-check, #convert {
+    margin-bottom: 2em;
+}
+
+i {
+    opacity: 0.6;
+    font-size: 0.8em;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crypto Tracker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </head>
+    <body class="bg-light container">
+        <header class="jumbotron">
+            <h1 class="text-center text-white">Crypto Tracker</h1>
+        </header>
+        
+        <div class="row">
+            
+            <div class="col-lg-6">
+                <div id="top-10" class="card">
+                    <div class="card-header bg-warning">
+                        <h2 class="text-white"><i class="fas fa-sort-amount-up"></i> Top 10</h2>
+                        <p class="text-detail no-margin">Looking for something
+                        new to invest in? Check out the Top 10!</p>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="text-right">
+                            <input id="toggle-symbol" type="checkbox" checked="true"></input>
+                            <label for="toggle-symbol">Show Symbols</label>
+                        </div>
+                        <table id="top-10-table">
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th class="text-right">Change (24h)</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-6 d-flex flex-column">
+                
+                <div id="price-check" class="card">
+                    <div class="card-header bg-success">
+                        <h2 class="text-white"><i class="fas fa-dollar-sign"></i> Price Check</h2>
+                        <p class="text-detail no-margin">Track the price of your 
+                        favorite coins in USD or BTC.</p>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        
+                        <select id="price-check" name="coin-list" class="coin-list bg-white text-success">
+                            <option selected="true" disabled="disabled">Choose a coin</option>
+                        </select>
+                        
+                        <div class="btn-group text-right">
+                            <button id="usd" class="btn btn-success" value="usd">USD</button>
+                            <button id="btc" class="btn btn-outline-success" value="btc">BTC</button>
+                        </div>
+                        
+                        <h2 id="price" class="text-center text-success"></h2>
+                    </div>
+                </div>
+                
+                <div id="convert" class="card">
+                    <div class="card-header bg-primary">
+                        <h2 class="text-white"><i class="fab fa-btc"></i> Converter</h2>
+                        <p class="text-detail no-margin">Convert between any cryptocurrencies.</p>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="text-primary">From</h5>
+                        <input id="convert-amount" type="number" placeholder="Amount"/>
+                        <select id="convert-from" name="coin-list" class="coin-list bg-white text-primary">
+                            <option selected="true" disabled="disabled">Choose a coin</option>
+                        </select>
+                        
+                        <h5 class="text-primary">To</h5>
+                        <select id="convert-to" name="coin-list" class="coin-list bg-white text-primary">
+                            <option selected="true" disabled="disabled">Choose a coin</option>
+                        </select>
+                        
+                        <button id="submit-convert" type="submit" class="btn btn-primary">Convert</button><br>
+                        
+                        <div class="text-center text-primary">
+                            <span id="is-worth"></span>
+                            <h2 id="convert-result"></h2>
+                            <span id="res-unit"></span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div><!--row-->
+    </body>
+    
+    <footer class="text-right">
+        <p>Data provided by <a href="https://coinmarketcap.com/" target="_blank">CoinMarketCap</a>.</p>
+    </footer>
+</html>
