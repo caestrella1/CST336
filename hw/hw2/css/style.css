@@ -1,5 +1,5 @@
 body {
-    height: 100vh;
+    margin-top: 2em;
 }
 
 header {
@@ -7,24 +7,10 @@ header {
     background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4selZ8kceikbmag5q/videoblocks-broker-trading-bitcoin-cryptocurrency-on-exchange-with-price-evolution-candle-chart_btopx-som_thumbnail-full01.png);
 }
 
-.jumbotron {
-    margin-top: 2em;
-}
-
-.no-padding {
-    padding: 0;
-}
-
-.no-margin {
-    margin: 0;
-}
 
 .text-detail {
+    margin: 0;
     color: rgba(255, 255, 255, 0.75);
-}
-
-#price {
-    margin-top: 1em;
 }
 
 select, input[type='number'] {
@@ -53,14 +39,29 @@ tr {
 }
 
 td, th {
-    padding: 1em 0;
+    padding: 1em .5em;
+    white-space: nowrap;
 }
 
 #top-10, #price-check, #convert {
     margin-bottom: 2em;
 }
 
+@media (max-width: 767px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
 i {
     opacity: 0.6;
     font-size: 0.8em;
+}
+
+span[id^="change-"] {
+    padding: .5em;
+    border-radius: 5px;
 }

@@ -116,20 +116,23 @@ $(function() {
                 for (let i = 0; i < 10; i++) {
                     let name = data[i].name;
                     let sym = data[i].symbol;
+                    let cap = parseInt(data[i].market_cap_usd).toLocaleString();
                     let change = data[i].percent_change_24h;
+                    let link = `https://coinmarketcap.com/currencies/${data[i].id}`;
                     
                     $("#top-10-table").append(`<tr>
                         <td class="font-weight-bold">${i + 1}</td>
-                        <td>${name} <span class="coin-symbol">(${sym})</span></td>
-                        <td id="change-${i + 1}" class="text-right font-weight-bold">${change}%</td>
+                        <td><a href="${link}" target="_blank">${name} <span class="coin-symbol">(${sym})</span></td>
+                        <td>$${cap}</td>
+                        <td class="text-right"><span id="change-${i + 1}" class="font-weight-bold text-white">${change}%</span></td>
                     </tr>`);
                     
                     let temp = $(`#change-${i + 1}`);
                     
                     if (parseFloat(change) < 0)
-                        temp.addClass("text-danger");
+                        temp.addClass("bg-danger");
                     else if (parseFloat(change) > 0)
-                        temp.addClass("text-success");
+                        temp.addClass("bg-success");
                 }
             },
             error: function(err){
