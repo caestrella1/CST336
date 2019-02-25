@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping Cart</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+    </head>
+    
+    <body class="container">
+        <main class="row">
+            <div class="col-12">
+                <h1> Spring Break Shopping  </h1>
+            
+                <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Unit <br> Price</th>
+                    <th> Quantity </th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>Microfiber Beach Towel</td>
+                    <td id="item-1-price">30</td>
+                    <td><input id="item-1-quantity" class="quantity" type="number" size="5"></td>
+                    <td id="total-1"></td>
+                </tr>
+            
+               <tr>
+                    <td>Sunscreen 100SPF, 120ml</td>
+                    <td id="item-2-price">10</td>
+                    <td><input id="item-2-quantity" class="quantity" type="number" size="5"></td>
+                    <td id="total-2"></td>
+                </tr>    
+                
+                <tr>
+                    <td>Ipanema Flip-flop Sandals </td>
+                    <td id="item-3-price">20</td>
+                    <td><input id="item-3-quantity" class="quantity" type="number" size="5"></td>
+                    <td id="total-3"></td>
+                </tr>
+            
+               <tr>
+                    <td>Shipping</td>
+                    <td></td>
+                    <td></td>
+                    <td id="shipping"></td>
+                </tr>    
+                    
+                <tr>
+                    <td>Subtotal</td>
+                    <td></td>
+                    <td></td>
+                    <td id="subtotal"></td>
+                </tr>             
+                    
+                <tr>
+                    <td>Tax (10%)</td>
+                    <td></td>
+                    <td></td>
+                    <td id="tax"></td>
+                </tr>
+                
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td id="total"></td>
+                </tr>
+                   
+                </table>
+                
+                <h3>Shipping & Handling</h3>
+                <select id="shipping">
+                    <option value="">Select one</option>
+                    <option id="next-day" value="15">Next-day Delivery: $15.00</option>
+                    <option id="three-day" value="10">Three-day Delivery: $10.00</option>
+                    <option id="regular" value="5">Regular (5-8 days): $ 5.00</option>
+                </select>
+                <br><br>
+                
+
+                <span>I accept the terms of this purchase.</span>
+                <br> 
+                
+                <button id="confirm" class="btn btn-primary">Confirm Purchase</button>
+                </div>
+        </main>
+    </body>
+</html>
