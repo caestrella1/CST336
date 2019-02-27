@@ -1,0 +1,45 @@
+body {
+    font-family: "Roboto";
+    background-color: #f6f6f6;
+}
+
+h1 {
+    margin-bottom: .5em;
+}
+
+.card {
+    margin: 5em auto;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.m-field {
+    margin: 1em 0;
+}
+
+input:not([type="submit"]) {
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+    padding: 8px 10px;
+    transition: .5s;
+}
+
+input:hover {
+    border: 1px solid #007bff;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #007bff;
+}
+
+input.btn[type="submit"] {
+    box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1);
+    transition: .5s;
+}
+
+input.btn[type="submit"]:hover {
+    background-color: #1e8aff;
+    box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.15);
+}
