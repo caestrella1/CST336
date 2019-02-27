@@ -3,7 +3,7 @@
 $(function() {
     var subtotal = 0;
     
-    $(".quantity").on("change", function() {
+    $(".quantity").on("input", function() {
         subtotal = 0;
         
        let array = $(".quantity"); // input number
