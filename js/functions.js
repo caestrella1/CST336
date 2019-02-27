@@ -1,8 +1,8 @@
 /*global $*/ 
 
-function toggleColor() {
-    $("#container").toggleClass("light-bg dark-bg");
-    $("#content").toggleClass("lighter-bg darker-bg");
-}
-
-$("#hello").on("click", toggleColor);
+$(function() {
+    $("#hello").on("click", function() {
+        $("body").toggleClass("light-bg darker-bg");
+        $(".entry").toggleClass("lighter-bg dark-bg");
+    });
+});
