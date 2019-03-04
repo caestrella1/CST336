@@ -75,7 +75,7 @@ function validateUser() {
     /* Using JSON */
     $.ajax({
         type: "GET",
-        url: "check-username-json.php",
+        url: "../api/check-username-json.php",
         dataType: "json",
         data: { "username": username },
         success: function(data, status) {
@@ -100,7 +100,7 @@ function validateUser() {
     /* Using PHP */
     // $.ajax({
     //     type: "GET",
-    //     url: "check-username.php",
+    //     url: "../api/check-username.php",
     //     data: { "username": username },
     //     success: function(data, status) {
     //         if (username.length < 4) {

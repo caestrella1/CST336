@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Practice 5: Like/Dislike Video App</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script type="text/javascript" src="js/functions.js"></script>
+</head>
+  <body class="container">
+  
+    <iframe width="100%" height="500" src="https://www.youtube.com/embed/ee1172yeqyE" 
+    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
+    
+    
+    <div class="text-right">
+      
+      <button id="like">
+        <img src="img/like_gray.png" alt="Like button" width="35" />
+      </button>
+      
+      <button id="likeundo">
+        <img src="img/like_blue.png" alt="Like button" width="35" />
+      </button>
+      
+      <span id="likes"></span>
+      
+      <button id="dislike">
+        <img src="img/dislike_gray.png" alt="Like button" width="35" />
+      </button>
+      
+      <button id="dislikeundo">
+        <img src="img/dislike_blue.png" alt="Like button" width="35" />
+      </button>
+      
+      <span id="dislikes"></span>
+      
+    </div>
+    
+    <button id="comments" class="btn btn-primary">Get comments</button>
+    <div id="comment-section"></div>
+    
+  </body>
+</html>
