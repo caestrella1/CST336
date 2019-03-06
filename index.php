@@ -30,7 +30,7 @@
                         "<a href='{$scan[$i]}'>".
                             "<div class='entry lighter-bg'>".
                                 "<span class='file'>Homework {$num}</span>".
-                                "<span class='date'>".date("F j, Y",filemtime($scan[$i]))."</span>".
+                                "<span class='date'>".date("F j, Y",filectime($scan[$i]))."</span>".
                             "</div>".
                         "</a>";
                     }
@@ -49,7 +49,7 @@
                         "<a href='{$scan[$i]}'>".
                             "<div class='entry lighter-bg'>".
                                 "<span class='file'>Lab {$num}</span>".
-                                "<span class='date'>".date("F j, Y",filemtime($scan[$i]))."</span>".
+                                "<span class='date'>".date("F j, Y",filectime($scan[$i]))."</span>".
                             "</div>".
                         "</a>";
                     }
@@ -68,7 +68,7 @@
                         "<a href='{$scan[$i]}'>".
                             "<div class='entry lighter-bg'>".
                                 "<span class='file'>Practice {$num}</span>".
-                                "<span class='date'>".date("F j, Y",filemtime($scan[$i]))."</span>".
+                                "<span class='date'>".date("F j, Y",filectime($scan[$i]))."</span>".
                             "</div>".
                         "</a>";
                     }
