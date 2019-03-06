@@ -1,4 +1,6 @@
 <?php 
+
+    header('Access-Control-Allow-Origin: *');
     
     $usernames = array("eeny", "meeny", "miny", "maria", "john");
     $username = array();

@@ -1,154 +1,144 @@
 /* global $ */
 
-var validZip, validUser, validPass, validConfirm;
+var validUser, validPass, suggested;
 
 $(function() {
-    $("#zip-error").hide();
+    suggestPassword();
     $("#password-feedback").hide();
     
-    $("#state").on("change", function() {
-        $.ajax({
-            type: "GET",
-            url: "http://itcdland.csumb.edu/~milara/ajax/countyList.php",
-            dataType: "json",
-            data: { "state": $("#state").val() },
-            success: function(data,status) {
-                $("#county").html("Select one");
-                for (let i = 0; i < data.length; i++) {
-                    $("#county").append("<option>" + data[i].county + "</option>")
-                }
-            }
-        });
+    $("#username-json").on("change", function() {
+        validateUser("json");
     });
     
-    $("#zip").on("change", validateZip);
-    $("#username").on("change", validateUser);
-    $("#pass").on("change", validatePassword);
-    $("#pass-confirm").on("change", confirmPassword);
+    $("#username-text").on("change", function() {
+        validateUser("text");
+    });
+    
+    /* Validate password every time field loses focus */
+    $("#pass").on("input", validatePassword);
+    
+    /* Fill in password suggestion ONLY after suggestion is available */
+    $(document).on('click','#suggested',function() {
+        $("#pass").val(suggested);
+    });
     
     $("#submit-btn").on("click", function() {
         // run all the validators (can't return in functions due to AJAX being asynchronous)
-        validateZip(); validateUser(); validatePassword(); confirmPassword();
+        validateUser("json"); validatePassword();
         
-        // hold all results in an array to make sure result doesn't short circuit
-        if ([validZip, validUser, validPass, validConfirm].every(Boolean))
+        if (validUser && validPass)
             alert("Your account was successfully created!");
     });
     
 });
 
-function validateZip() {
-    $.ajax({
-        type: "GET",
-        url: "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
-        dataType: "json",
-        data: { "zip": $("#zip").val() },
-        success: function(data, status) {
-            if (typeof data["zip"] === "undefined") {
-                $("#zip-error").show();
-                $("#city").html("");
-                $("#lat").html("");
-                $("#long").html("");
-                validZip = false;
-            }
-            else {
-                $("#zip-error").hide();
-                $("#city").html(data.city);
-                $("#lat").html(data.latitude);
-                $("#long").html(data.longitude);
-                validZip = true;
-            }
-        },
-        error: function() {
-            $("#zip-error").show();
-            validZip = false;
-        }
-    });
-}
-
-function validateUser() {
+function validateUser(api) {
     let available = "Username is available";
     let unavailable = "Username is not available";
-    let userlength = "Username must be at least 4 characters";
-    let username = $("#username").val();
-    
-    /* Using JSON */
+    let error_length = "Username must be at least 4 characters";
+    let username = $(`#username-${api}`).val();
+
+    if (api == "json") {
+        
+        $.ajax({
+            type: "GET",
+            url: "api/check-username-json.php",
+            dataType: "json",
+            data: { "username": username },
+            success: function(data, status) {
+                
+                if (username.length < 4) {
+                    $("#username-json-feedback").html(error_length);
+                    $("#username-json-feedback").addClass("text-danger").removeClass("text-success");
+                    validUser = false;
+                }
+                else if (data.available) {
+                    $("#username-json-feedback").html(available);
+                    $("#username-json-feedback").addClass("text-success").removeClass("text-danger");
+                    validUser = true;
+                }
+                else {
+                    $("#username-json-feedback").html(unavailable);
+                    $("#username-json-feedback").addClass("text-danger").removeClass("text-success");
+                    validUser = false;
+                }
+            }
+            
+        });
+        
+    }
+    else if (api == "text") {
+        
+        $.ajax({
+            type: "GET",
+            url: "api/check-username-text.php",
+            data: { "username": username },
+            success: function(data, status) {
+                if (username.length < 4) {
+                    $("#username-text-feedback").html(error_length);
+                    $("#username-text-feedback").addClass("text-danger").removeClass("text-success");
+                    validUser = false;
+                }
+                else if (data == "true") {
+                    $("#username-text-feedback").html(available);
+                    $("#username-text-feedback").addClass("text-success").removeClass("text-danger");
+                    validUser = true;
+                }
+                else {
+                    $("#username-text-feedback").html(unavailable);
+                    $("#username-text-feedback").addClass("text-danger").removeClass("text-success");
+                    validUser = false;
+                }
+            }
+        });
+        
+    }
+}
+
+function suggestPassword() {
     $.ajax({
         type: "GET",
-        url: "../api/check-username-json.php",
+        url: "api/suggest-pwd.php",
+        data: { "username": $("#username-json").val(), "length": "10" },
         dataType: "json",
-        data: { "username": username },
         success: function(data, status) {
-            if (username.length < 4) {
-                $("#username-feedback").html(userlength);
-                $("#username-feedback").addClass("text-danger").removeClass("text-success");
-                validUser = false;
-            }
-            else if (data.available) {
-                $("#username-feedback").html(available);
-                $("#username-feedback").addClass("text-success").removeClass("text-danger");
-                validUser = true;
-            }
-            else {
-                $("#username-feedback").html(unavailable);
-                $("#username-feedback").addClass("text-danger").removeClass("text-success");
-                validUser = false;
-            }
+            suggested = data.suggested;
+            $("#pass-suggestion").html(`Suggested Password: <span id="suggested"` 
+            +` class="text-success font-weight-bold">${suggested}</span>`);
         }
     });
-    
-    /* Using PHP */
-    // $.ajax({
-    //     type: "GET",
-    //     url: "../api/check-username.php",
-    //     data: { "username": username },
-    //     success: function(data, status) {
-    //         if (username.length < 4) {
-    //             $("#username-feedback").html(userlength);
-    //             $("#username-feedback").addClass("text-danger").removeClass("text-success");
-    //             validUser = false;
-    //         }
-    //         else if (data == "true") {
-    //             $("#username-feedback").html(available);
-    //             $("#username-feedback").addClass("text-success").removeClass("text-danger");
-    //             validUser = true;
-    //         }
-    //         else {
-    //             $("#username-feedback").html(unavailable);
-    //             $("#username-feedback").addClass("text-danger").removeClass("text-success");
-    //             validUser = false;
-    //         }
-    //     }
-    // });
 }
 
 function validatePassword() {
-    let req = "Password must have at least 6 characters.";
+    let error_length = "Password must have at least 6 characters.";
+    let error_username = "Password must not contain your username";
     let password = $("#pass").val();
     
     if (password.length < 6) {
         $("#pass-feedback").show();
-        $("#pass-feedback").html(req);
+        $("#pass-feedback").html(error_length);
         validPass = false;
     }
     else {
-        $("#pass-feedback").hide();
-        validPass = true;
-    }
-}
-
-function confirmPassword() {
-    let mismatch = "Passwords do not match.";
-    let password = $("#pass").val();
-    let confirm = $("#pass-confirm").val();
-    
-    if (password != confirm) {
-        $("#pass-confirm-feedback").show();
-        $("#pass-confirm-feedback").html(mismatch);
-        validConfirm = false;
-    }
-    else {
-        $("#pass-confirm-feedback").hide();
-        validConfirm = true;
+        $.ajax({
+            type: "GET",
+            url: "api/validate-pwd.php",
+            data: { 
+                "username": $("#username-json").val(), 
+                "pwd": password
+            },
+            dataType: "json",
+            success: function(data, status) {
+                if (data.valid) {
+                    $("#pass-feedback").hide();
+                    validPass = true;
+                }
+                else {
+                    $("#pass-feedback").show();
+                    $("#pass-feedback").html(error_username);
+                    validPass = false;
+                }
+            }
+        });
     }
 }
