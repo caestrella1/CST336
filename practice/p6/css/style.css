@@ -1,0 +1,27 @@
+nav {
+    padding: 1em 0;
+    margin-bottom: 2em;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+table {
+    margin-top: 1em;
+    width: 100%;
+}
+
+td, th {
+    padding: .5em 1em;
+}
+
+tr:nth-child(even) {
+    border-spacing: 15px;
+    background-color: #f6f6f6;
+}
+
+#checkout {
+    margin-top: 1em;
+}
+
+#success {
+    margin-top: 1em;
+}

@@ -1,0 +1,10 @@
+[08-Mar-2019 01:20:39 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'ottermart221'' in /home/ubuntu/workspace/CST336/labs/lab6/get-products.php:8
+Stack trace:
+#0 /home/ubuntu/workspace/CST336/labs/lab6/get-products.php(8): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 {main}
+  thrown in /home/ubuntu/workspace/CST336/labs/lab6/get-products.php on line 8
+[08-Mar-2019 01:24:04 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY productPrice ASC' at line 1' in /home/ubuntu/workspace/CST336/labs/lab6/get-products.php:15
+Stack trace:
+#0 /home/ubuntu/workspace/CST336/labs/lab6/get-products.php(15): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/CST336/labs/lab6/get-products.php on line 15
