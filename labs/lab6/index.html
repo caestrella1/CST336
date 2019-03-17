@@ -2,16 +2,107 @@
 <html>
     
     <head>
-        <title>Ottermart Product Search</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OtterMart Product Search</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script type="text/javascript" src="js/functions.js"></script>
     </head>
     
     <body>
-        <h1>Product Search</h1>
+        <header>
+            <div class="bg-primary text-white">
+                <h2 id="title" class="container py-3">OtterMart Product Search</h2>
+            </div>
+            
+            <div class="container">
+                <div class="text-center my-4">
+                    <input id="search-bar" class="btn card d-inline w-50" type="text" name="query" placeholder="Search for products by name or description"/>
+                    <button id="search-button" class="btn btn-primary">Search</button>
+                </div>
+                
+                <!-- Filter Options -->
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex justify-content-around">
+                            
+                            <div>
+                                <div class="text-primary font-weight-bold">Category</div>
+                                <select id="category" class="card d-inline" name="category">
+                                    <option value="">All Categories</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <div class="text-primary font-weight-bold">Price Range</div>
+                                <input class="btn card d-inline" type="number" name="price-low" placeholder="Low"/>
+                                <span class="text-primary font-weight-bold mx-2">to</span>
+                                <input class="btn card d-inline" type="number" name="price-high" placeholder="High"/>
+                            </div>
+                            
+                            <div>
+                                <div class="text-primary font-weight-bold">Order By</div>
+                                <span>
+                                    <input id="order-price" type="radio" name="order" value="productPrice"/>
+                                    <label for="order-price" class="ml-1">Price</label>
+                                </span>
+                                <span>
+                                    <input id="order-name" class="ml-3" type="radio" name="order" value="productName"/>
+                                    <label for="order-name" class="ml-1">Name</label>
+                                </span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </header>
         
-        <div id="products"></div>
-        
+        <main class="container">
+            
+            <div class="row">
+                <div class="col-12">
+                    <div id="results">
+                        <h3>Found <span id="search-count">0</span> Products</h3>
+                        <p class="text-muted">Click on a product to view its details and purchase history.</p>
+                    </div>
+                    
+                    <ul id="products" class="pl-0 mb-5"></ul>
+                    
+                </div><!-- col-12 -->
+            </div>
+            
+        </main>
     </body>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="item-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <h4 id="modal-title">Product Name</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    <img id="modal-image" class="d-block mx-auto">
+                    <h4 class="text-muted">Description</h4>
+                    <p id="modal-description"></p>
+                    <h6 class="text-primary">Purchase History</h6>
+                    <p id="modal-history"></p>
+                </div>
+                
+            </div>
+        </div>
+    </div><!-- modal-->
     
 </html>

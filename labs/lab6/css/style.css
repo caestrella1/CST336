@@ -1,0 +1,56 @@
+/* Overrides */
+header {
+    margin-bottom: 2em;
+}
+
+body {
+    background-color: #f6f6f6;
+}
+
+input {
+    background-color: white;
+    text-align: left !important;
+    transition: .5s;
+}
+
+input:focus {
+    border: 1px solid #017BFF;
+    outline: none;
+}
+
+/* Search Tools */
+
+input[type="number"] {
+    width: 100px;
+}
+
+/* Results */
+
+.product-entry {
+    cursor: pointer;
+    transition: .5s;
+}
+
+.product-entry:hover {
+    background-color: #eee;
+}
+
+.product-name {
+    width: 200px;
+}
+
+.product-category, .product-price {
+    width: 100px;
+}
+
+.product-image {
+    width: 64px;
+    height: 64px;
+}
+
+/* Modal */
+
+#modal-image {
+    max-height: 200px;
+    margin-bottom: 1em;
+}
