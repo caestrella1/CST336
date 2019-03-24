@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Lists | Reminders</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+    </head>
+    <body class="vh-100">
+        
+        <header class="bg-warning">
+            <div class="container">
+                <h1 class="text-white py-2">Reminders</h1>
+            </div>
+        </header>
+        
+        <main class="container">
+            
+            <div class="row">
+                
+                <div class="col-md-4 overflow-scroll">
+                    <div id="lists" class="mt-4"></div>
+                </div>
+                
+                <div id="list-container" class="col-md-8 overflow-scroll">
+                    
+                    <div id="add-list" class="bg-warning text-white"><span>+</span></div>
+                    
+                    <div class="my-4">
+                        <input class="form-control form-control-lg w-100 mb-2 pl-3" type="text" name="list-name" placeholder="List title"/>
+                        <input class="form-control w-100 mt-2 mb-4 pl-3" type="text" name="list-desc" placeholder="List description"/>
+                        
+                        <h4>List Items</h4>
+                        <div id="list-items" class="full-height"></div>
+                        <button id="add-item" class="btn btn-block btn-warning font-weight-bold text-white">Add Item +</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </main>
+        
+    </body>
+</html>

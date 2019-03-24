@@ -1,0 +1,53 @@
+body {
+    background-color: #f6f6f6;
+}
+
+.vh-100 {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.overflow-scroll {
+    height: 90vh;
+    overflow: scroll;
+}
+
+#add-list {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    transition: .5s;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 8%;
+    right: 12%;
+    z-index: 5;
+}
+
+#add-list span {
+    position: relative;
+    top: -4px;
+    font-size: 2.5em;
+}
+
+.user-list {
+    cursor: pointer;
+    transition: .5s;
+}
+
+.user-list:hover {
+    background-color: #eee;
+}
+
+.list-selected {
+    background-color: rgba(255, 193, 7, 0.4);
+}
+
+.list-selected:hover {
+    background-color: rgba(255, 193, 7, 0.6) !important;
+}
