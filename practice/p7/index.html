@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping Cart</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+    </head>
+    
+    <body>
+        <nav class="bg-primary">
+            <h2 class="container text-white">Spring Break Shopping</h2>
+        </nav>
+        
+        <main class="container">
+            <div class="row">
+                <div class="col-12">
+            
+                    <table id="product-table">
+                        
+                        <tr class="bg-primary text-white">
+                            <th>Product</th>
+                            <th>Unit Price</th>
+                            <th> Quantity </th>
+                            <th class="text-right">Total</th>
+                        </tr>
+                        
+                        <tbody id="products"></tbody>
+                        
+                        <tr id="product-add">
+                            <td>
+                                <select id="product-list" name="product-list">
+                                    <option id="select">Select a product</option>
+                                </select>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Discount</td>
+                            <td></td>
+                            <td id="discountPercent"></td>
+                            <td id="discount" class="text-right"></td>
+                        </tr>    
+                        
+                       <tr>
+                            <td>Shipping</td>
+                            <td></td>
+                            <td></td>
+                            <td id="shipping" class="text-right"></td>
+                        </tr>    
+                            
+                        <tr>
+                            <td>Subtotal</td>
+                            <td></td>
+                            <td></td>
+                            <td id="subtotal" class="text-right"></td>
+                        </tr>             
+                            
+                        <tr>
+                            <td>Tax (10%)</td>
+                            <td></td>
+                            <td></td>
+                            <td id="tax" class="text-right"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Total</td>
+                            <td colspan="3" id="total" class="text-success font-weight-bold text-right"></td>
+                        </tr>
+                       
+                    </table>
+                    
+                </div>
+                
+                <label id="promo-label" for="promocode">Promo Code: </label>
+                <input id="promo-code" type="text"></input>
+                
+                <section id="checkout" class="w-100 text-center">
+                    <h3>Shipping & Handling</h3>
+                    <select id="shipping" name="shipping">
+                        <option id="regular" value="5">Regular (5-8 days): $5.00</option>
+                        <option id="three-day" value="10">Three-day Delivery: $10.00</option>
+                        <option id="next-day" value="15">Next-day Delivery: $15.00</option>
+                    </select>
+                    <br><br>
+                    
+                    <input id="accept" type="checkbox" name="accept"/>
+                    <label id="accept-label" for="accept">I accept the terms of this purchase.</label>
+                    <br>
+                    
+                    <button id="confirm" class="btn btn-lg btn-primary">Confirm Purchase</button>
+                    <h3 id="success" class="text-success">Thank you for your purchase!</h3>
+                </section>
+                
+            </div>
+        </main>
+    </body>
+</html>

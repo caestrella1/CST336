@@ -1,0 +1,23 @@
+[25-Mar-2019 19:24:36 UTC] PHP Fatal error:  Call to a member function execute() on a non-object in /home/ubuntu/workspace/CST336/practice/p7/api/promos.php on line 8
+[25-Mar-2019 19:24:36 UTC] PHP Stack trace:
+[25-Mar-2019 19:24:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/CST336/practice/p7/api/promos.php:0
+[25-Mar-2019 20:22:07 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in /home/ubuntu/workspace/CST336/practice/p7/api/products.php:12
+Stack trace:
+#0 /home/ubuntu/workspace/CST336/practice/p7/api/products.php(12): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/CST336/practice/p7/api/products.php on line 12
+[25-Mar-2019 20:22:11 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in /home/ubuntu/workspace/CST336/practice/p7/api/products.php:12
+Stack trace:
+#0 /home/ubuntu/workspace/CST336/practice/p7/api/products.php(12): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/CST336/practice/p7/api/products.php on line 12
+[25-Mar-2019 20:23:41 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Smash Bros' at line 1' in /home/ubuntu/workspace/CST336/practice/p7/api/products.php:21
+Stack trace:
+#0 /home/ubuntu/workspace/CST336/practice/p7/api/products.php(21): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/CST336/practice/p7/api/products.php on line 21
+[25-Mar-2019 20:23:43 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Desktop PC' at line 1' in /home/ubuntu/workspace/CST336/practice/p7/api/products.php:21
+Stack trace:
+#0 /home/ubuntu/workspace/CST336/practice/p7/api/products.php(21): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/CST336/practice/p7/api/products.php on line 21
