@@ -1,13 +1,15 @@
 /* global $ */
 
 var id = null;
-var length = null;
+var word = null;
+var guesses = 6;
 
 $(function() {
     getWordInfo();
     $("#submit").on("click", function() {
-       checkWord();
-       addGuess();
+        let letter = $("#letter").val();
+        checkWord(letter);
+        $("#guess").append(" " + letter);
     });
 });
 
@@ -18,43 +20,34 @@ function getWordInfo() {
         dataType: "json",
         success: function(data) {
             id = data.word_id;
-            length = data["length"];
+            word = new Array(parseInt(data["length"]));
             $("#word-id").html("");
-            for (let i = 0; i < data["length"]; i++) {
-                $("#word-id").append(
-                    `_ `
-                );
+            for (let i = 0; i < word.length; i++) {
+                word[i] = "_";
+                $("#word-id").append(" " + word[i]);
             }
-            // $("#word-id").val(data.word_id);
         }
     });
 }
 
-function checkWord() {
+function checkWord(letter) {
     $.ajax({
         type: "get",
         url: "api/check_word.php",
         data: {
-            "letter":$("#letter").val(),
-            "id":id
+            "letter": letter,
+            "id": id
         },
-        success: function(data,status) {
-            let letter = $("#letter").val();
-            
+        success: function(data) {
             $("#word-id").html("");
             
-            for (let i = 0; i < length; i++) {
-                if (data[i]) {
-                    $("#word-id").append(` ${letter}`);
-               }
-               else {
-                   $("#word-id").append(` _`);
-               }
-            } 
+            for (let i = 0; i < word.length; i++) {
+                if (data[i]) word[i] = letter;
+                $("#word-id").append(" " + word[i]);
+            }
+            guesses--;
+            
+            if (guesses == 0) alert("GAME OVER!");
         }
     });
-}
-
-function addGuess(){
-    $("#guess").append(" " + $("#letter").val());
 }

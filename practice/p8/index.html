@@ -8,22 +8,33 @@
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="js/functions.js"></script>
     </head>
-    <body>
-    
-       <h1>Hangman</h1></br>
+    <body class="container">
         
-        <h4 id="insert"> Insert a Letter:  
-        <input type="text"  onkeyup="this.value = this.value.toLowerCase();" id ="letter" name="Letter" maxlength="1"/> 
-        <button id="submit" class="btn btn-primary">Submit</button></h4>
-        <br/>
-        <br/>
+        <div class="row">
+            <div class="col-2"></div>
+            
+            <div class="col-8">
+                <h1>Hangman</h1></br>
         
-        <div id="word-id"></div>
-      
-        <div id="guess"></div>
-      
-         <div id="man">
-            <img src="img/stick_0.png" class="manImg" id="hangImg">
+                <div class="col-6 mx-auto">
+                    <h4 id="insert">Insert a Letter</h4>
+                    <input id ="letter" type="text" class="form-control mb-3 text-center" placeholder="Guess a Letter" onkeyup="this.value = this.value.toLowerCase();" name="Letter" maxlength="1">
+                    <button id="submit" class="btn btn-primary btn-block" type="button">Submit</button>
+                </div>
+                
+                <br/>
+                <br/>
+                
+                <h3 id="word-id"></h3>
+              
+                <div id="guess"></div>
+              
+                <div id="man">
+                    <img src="img/stick_0.png" class="manImg" id="hangImg">
+                </div>
+            </div>
+            
+            <div class="col-2"></div>
         </div>
       
     </body>
