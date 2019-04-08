@@ -1,0 +1,15 @@
+
+
+#man {
+    margin: 20px auto;
+    width: 600px;
+    height: 600px;
+    border: solid;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+body{
+    padding-top: 50px;
+    text-align: center;
+}
