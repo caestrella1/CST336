@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pixabay Search</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+        <script>
+            /* global $ getFavorites getKeywords */
+            $(function() {
+               getFavorites();
+               getKeywords();
+                
+                $(document).on("click", ".btn-group-toggle, .btn-like", function() {
+                    let keyword = $(".active input[name='keyword']").val();
+                    getFavorites(keyword);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <nav class="bg-dark text-light py-2 shadow sticky-top">
+            <div class="container">
+                <a href="index.html" class="text-light" style="text-decoration:none">
+                    <h1>Pixabay Image Search</h1>
+                </a>
+            </div>
+        </nav>
+        
+        <main class="container mb-4">
+            <div class="row">
+                <div class="col-12 mt-4 text-center">
+                    <h2>Favorites</h2>
+                    
+                    <div id="keywords" class="btn-group btn-group-lg btn-group-toggle mt-2 mb-4" data-toggle="buttons"></div>
+                </div>
+            </div>
+            
+            <div id="images" class="row"></div>
+        </main>
+    
+    </body>
+</html>

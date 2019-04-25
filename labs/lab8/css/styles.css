@@ -1,0 +1,7 @@
+.btn-like {
+    font-size: 2em;
+    right: 0.5em;
+    bottom: 0.5em;
+    cursor: pointer;
+    text-shadow: 0px 0px 5px black;
+}
